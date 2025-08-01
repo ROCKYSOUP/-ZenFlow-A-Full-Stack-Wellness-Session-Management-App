@@ -13,7 +13,7 @@ dotenv.config()
 
 const app=new express();
 
-app.use(cors());
+app.use(cors({origin: "*",}));
 app.use(express.json());
 
 connectdb();
