@@ -13,7 +13,8 @@ dotenv.config()
 
 const app=new express();
 
-app.use(cors());
+app.use(cors({origin: "*", // or "http://localhost:3001" for tighter security
+  credentials: true}));
 app.use(express.json());
 
 connectdb();
