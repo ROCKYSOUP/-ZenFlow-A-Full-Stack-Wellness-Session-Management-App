@@ -106,7 +106,7 @@ function DashBoard() {
   const fetchMyDraftSession = async () => {
     try {
       const session = await axios.get(
-        "hhttps://zenflow-backen.onrender.com/api/draft/my-draft-session",
+        "https://zenflow-backen.onrender.com/api/draft/my-draft-session",
         { headers: { Authorization: token } }
       );
       setSessions(session.data);
