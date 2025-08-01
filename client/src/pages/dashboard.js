@@ -67,7 +67,7 @@ function DashBoard() {
   const editSession = async (statusValue) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/session/update-session/${editId}`,
+        `https://zenflow-backen.onrender.com/api/session/update-session/${editId}`,
         { title, tags, json_file_url: url, status: statusValue },
         { headers: { Authorization: token } }
       );
@@ -93,7 +93,7 @@ function DashBoard() {
   const handleDelete = async (session) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/session/delete-session/${session._id}`,
+        `https://zenflow-backen.onrender.com/api/session/delete-session/${session._id}`,
         { headers: { Authorization: token } }
       );
       await fetchMyDraftSession();
@@ -106,7 +106,7 @@ function DashBoard() {
   const fetchMyDraftSession = async () => {
     try {
       const session = await axios.get(
-        "http://localhost:5000/api/draft/my-draft-session",
+        "hhttps://zenflow-backen.onrender.com/api/draft/my-draft-session",
         { headers: { Authorization: token } }
       );
       setSessions(session.data);
@@ -118,7 +118,7 @@ function DashBoard() {
   const fetchMySession = async () => {
     try {
       const session = await axios.get(
-        "http://localhost:5000/api/publish/my-published-session",
+        "https://zenflow-backen.onrender.com/api/publish/my-published-session",
         { headers: { Authorization: token } }
       );
       setPubSessions(session.data);

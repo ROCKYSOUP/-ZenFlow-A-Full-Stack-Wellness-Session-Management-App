@@ -29,7 +29,7 @@ function MyAccount() {
 
   const getUser = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/get-user", {
+      const res = await axios.get("https://zenflow-backen.onrender.com/api/auth/get-user", {
         headers: { Authorization: token },
       });
       setName(res.data.name);
@@ -43,7 +43,7 @@ function MyAccount() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete("http://localhost:5000/api/auth/delete-account", {
+      await axios.delete("https://zenflow-backen.onrender.com/api/auth/delete-account", {
         headers: { Authorization: token },
       });
       alert("User deleted");

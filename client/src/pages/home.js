@@ -55,7 +55,7 @@ function Home() {
   const addSession = async (statusValue) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/session/add-new-session",
+        "https://zenflow-backen.onrender.com/api/session/add-new-session",
         { title, tags, json_file_url: url, status: statusValue },
         { headers: { Authorization: token } }
       );
@@ -73,7 +73,7 @@ function Home() {
   const fetchSession = async () => {
     try {
       const session = await axios.get(
-        "http://localhost:5000/api/publish/all-session",
+        "https://zenflow-backen.onrender.com/api/publish/all-session",
         { headers: { Authorization: token } }
       );
       setSessions(session.data);
