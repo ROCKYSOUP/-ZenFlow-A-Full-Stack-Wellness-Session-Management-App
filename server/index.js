@@ -14,7 +14,7 @@ dotenv.config()
 const app=new express();
 
 app.use(cors({origin: "*", // or "http://localhost:3001" for tighter security
-  credentials: true}));
+  credentials: false}));
 app.use(express.json());
 
 connectdb();
@@ -26,7 +26,7 @@ app.use('/api/draft',draftRoutes)
 app.use('/api/publish',publishedRoutes)
 app.use('/api/auth',registerRoutes)
 
-app.listen(process.env.PORT || 5000 , async ()=>{
+app.listen(process.env.PORT  , async ()=>{
 
     try{
         console.log("Server is running")
